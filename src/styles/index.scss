@@ -1,0 +1,13 @@
+/** Meyer CSS Reset */
+@import "./reset.css";
+
+/** import general */
+@import "./globals.scss";
+
+/**import common **/
+@import './common/Header.scss';
+
+/**import pages **/
+@import "./pages/App.scss"
+
+

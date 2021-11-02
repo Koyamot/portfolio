@@ -1,8 +1,7 @@
 import React from 'react';
 // import { useEffect, useState } from 'react';
-import './App.scss';
 
-import Header from "./components/Header"
+import Header from "./components/common/Header"
 
 function App() {
 
