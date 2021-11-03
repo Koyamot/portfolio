@@ -24,7 +24,7 @@ function App() {
       <Header />
       <Route path="/" component={Landing} exact />
       <Route path="/about" component={About} exact />
-      <Route path="/about" component={Contact} exact />
+      <Route path="/contact" component={Contact} exact />
       </switch>
     </main>
     </ApolloProvider>
