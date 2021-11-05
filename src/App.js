@@ -3,7 +3,7 @@ import { createHttpLink, ApolloClient, InMemoryCache, ApolloProvider } from "@ap
 // import { useEffect, useState } from 'react';
 
 import Header from "./components/common/Header"
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
 import { Landing, About, Contact } from './components'
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
@@ -20,12 +20,12 @@ function App() {
   return (
     <ApolloProvider client={client}>
     <main>
-    <switch>
+    <Switch>
       <Header />
       <Route path="/" component={Landing} exact />
       <Route path="/about" component={About} exact />
       <Route path="/contact" component={Contact} exact />
-      </switch>
+      </Switch>
     </main>
     </ApolloProvider>
   );

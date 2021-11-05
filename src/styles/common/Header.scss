@@ -1,20 +1,23 @@
 header {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
 
-    a {
-        text-decoration: none;
-        padding: 24px 8px;
+  h2 {
+    width: 200px;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 24px 8px;
+  }
+
+  @include media(">=phone", "<=tablet") {
+    flex-direction: column;
+    align-items: center;
+
+    nav {
+      padding-top: 16px;
     }
-
-    @include media(">=phone", "<=tablet") {
-        flex-direction: column;
-        align-items: center;
-
-        nav {
-            padding-top: 16px;
-        }
-      }
-
+  }
 }
