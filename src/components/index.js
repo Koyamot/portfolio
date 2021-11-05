@@ -1,2 +1,2 @@
-export { About, Contact, Landing } from './pages'
+export { About, Contact, Landing, Blog } from './pages'
 export { Header } from './common'

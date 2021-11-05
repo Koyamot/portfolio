@@ -9,7 +9,7 @@ import {
 
 import Header from "./components/common/Header";
 import { Route, Switch } from "react-router";
-import { Landing, About, Contact } from "./components";
+import { Landing, About, Contact, Blog } from "./components";
 
 const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
@@ -30,6 +30,7 @@ function App() {
           <Route path="/" component={Landing} exact />
           <Route path="/about" component={About} exact />
           <Route path="/contact" component={Contact} exact />
+          <Route path="/blog" component={Blog} exact />
         </Switch>
       </div>
     </ApolloProvider>
