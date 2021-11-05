@@ -3,4 +3,9 @@
     font-size: 97px;
     margin: 50px 100px;
   }
+  @include media(">=phone", "<=tablet") {
+    h1 {
+      font-size: 40px;
+    }
+  }
 }
