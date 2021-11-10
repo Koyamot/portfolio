@@ -24,7 +24,7 @@ const Blog = () => {
     const avatar = data.avatar
     
   return (
-    <div>
+    <div className="blog_container">
       <Avatar avatar={avatar}/>
       <Post />
     </div>
