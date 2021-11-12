@@ -2,7 +2,7 @@ import React from "react";
 import { useQuery, gql } from "@apollo/client";
 import { Avatar, Post } from "../common";
 
-const GET_AVATAR = gql`
+const GET_DATA = gql`
   query getAvatar {
     avatar {
       Name
@@ -16,7 +16,7 @@ const GET_AVATAR = gql`
 `;
 
 const Blog = () => {
-  const { loading, error, data } = useQuery(GET_AVATAR, {});
+  const { loading, error, data } = useQuery(GET_DATA, {});
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>DOH! :(</p>;

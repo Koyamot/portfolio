@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Portfolio } from "../common";
 
 
+
+
 const Landing = () => {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
@@ -53,9 +55,6 @@ const Landing = () => {
   return (
     <div className="landing">
       <h1>{`${words[index].substring(0, subIndex)}${blink ? "|" : ""}`}</h1>
-      {/* {index === words.length - 1 && subIndex === words[3].length + 1 ? (
-        <Portfolio />
-      ) : null} */}
       <Portfolio />
     </div>
   );
