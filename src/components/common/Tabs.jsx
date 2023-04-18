@@ -45,14 +45,14 @@ const Tabs = ({ useCases }) => {
         >
           UX & Design
         </a>
-        <a
+        {/* <a
           onClick={engineerTab}
           className={`tab tab-lg tab-bordered border-secondary-focus rounded-lg focus:border-secondary ${
             activeTab === "engineerTab" ? "tab-active bg-primary border-none" : ""
           }`}
         >
           Engineer
-        </a>
+        </a> */}
         {/* <a
           onClick={artTab}
           className={`tab tab-lg tab-bordered border-secondary-focus rounded-lg focus:border-secondary ${
