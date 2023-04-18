@@ -88,10 +88,10 @@ const Landing = () => {
             </p>
             <h2 className="text-xl font-bold pb-3">Engineering Strengths:</h2>
             <p className="pb-12 ">
-              Nodejs • Express •Javascript • Python • Postgres • MongoDB • SQL •
-              NoSQL • RESTful APIs • Headless CMS • AWS • Terminal • Postman •
-              CI/CD • OOP • Unit Testing • jest • cypress.io • Apollo Client •
-              GraphQL • HTML • Javascript • Notion • ReactJS • Recoil • Redux •
+              Nodejs • Express • Javascript • Postgres • MongoDB • SQL •
+              NoSQL • RESTful APIs • AWS • Terminal • Postman •
+              CI/CD • OOP • Unit Testing • Apollo Client •
+              GraphQL • HTML • Notion • ReactJS • Redux •
               ContextAPI •Styled-Components • CSS (Less/Sass) • PHP • GitHub •
               git • VSCode • Jira
             </p>
