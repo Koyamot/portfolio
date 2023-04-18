@@ -65,7 +65,6 @@ const Tabs = ({ useCases }) => {
       <div className="container">
 
         {activeTab === "designTab" ? <UXDesignTab useCases={useCases}/> : null}
-        {activeTab === "engineerTab" ? <EngineerTab useCases={useCases}/> : null}
 
 
       </div>
