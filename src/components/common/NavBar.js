@@ -14,15 +14,14 @@ export default () => {
   ];
 
   return (
-    <div className="navbar bg-base-100 w-4/5 mx-auto">
-      <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-xl">i am kyla.</a>
-      </div>
-      <div className="flex-none">
+    <div className="navbar flex-wrap mx-auto lg:justify-between sm:justify-center content-center bg-base-100 lg:w-4/5">
+        <a className="btn btn-ghost lg:mx-0 sm:mx-auto normal-case lg:text-xl sm:text-l">i am kyla.</a>
+
+      <div className="lg:flex-none sm:flex sm:items-center">
         <ul className="menu menu-horizontal px-1">
           {navigation.map((item, idx) => {
             return (
-              <li key={idx}>
+              <li className="lg:text-base sm:text-xs" key={idx}>
                 <Link to={item.path}>{item.title}</Link>
               </li>
             );
