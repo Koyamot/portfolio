@@ -1,82 +1,12 @@
 import React from "react";
-import { useQuery, gql } from "@apollo/client";
 import { useParams } from "react-router";
 
-const GET_DATA = gql`
-  query getData($id: ID!) {
-    portfolio(id: $id) {
-      id
-      Title
-      Image {
-        id
-        url
-      }
-      uxContent
-      Link
-      github
-      startDate
-      endDate
-      iUXed
-      team_size
-      iCoded
-      codeContent
-      Coding {
-        id
-        Task
-      }
-      UXDesign {
-        id
-        Problem
-        Problem_Explanation
-        Design
-        Design_Explanation
-        Testing
-        Testing_Explanation
-        Reflection
-        Reflection_Explanation
-        designProblem {
-          id
-          Goals
-          Goals_Explained
-          Goals_Pictures {
-            id
-            url
-          }
-        }
-        problem_images {
-          id
-          url
-        }
-        design_images {
-          id
-          url
-        }
-        testing_images {
-          id
-          url
-        }
-        reflection_images {
-          id
-          url
-        }
-      }
-    }
-  }
-`;
 
 const PortfolioPage = () => {
-  const { id } = useParams();
-  const { loading, error, data } = useQuery(GET_DATA, {
-    variables: {
-      id: id,
-    },
-  });
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>DOH! :(</p>;
-  console.log(data);
-  const p = data.portfolio;
-  const ux = data.portfolio.UXDesign.designProblem;
-  console.log("ux :", ux);
+  // const { id } = useParams();
+  // const p = data.portfolio;
+  // const ux = data.portfolio.UXDesign.designProblem;
+  // console.log("ux :", ux);
   return (
     // id: ID!
     // created_at: DateTime!

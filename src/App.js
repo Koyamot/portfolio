@@ -1,43 +1,25 @@
 import React from "react";
-import {
-  createHttpLink,
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-} from "@apollo/client";
 // import { useEffect, useState } from 'react';
-
-import Header from "./components/common/Header";
-import { Route, Switch } from "react-router";
+import { Routes, Route } from "react-router";
 import { Landing, About, Contact, Blog } from "./components";
 import PortfolioPage from "./components/pages/PortfolioPage";
+import NavBar from "./components/common/NavBar";
+import WordHoax from "./components/pages/WordHoax";
 
-const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 
 function App() {
-  const link = createHttpLink({
-    uri: `${backendUrl}/graphql`,
-    credentials: "same-origin",
-  });
-  const client = new ApolloClient({
-    cache: new InMemoryCache(),
-    link,
-  });
   return (
-    <ApolloProvider client={client}>
       <div>
-        <Header />
-        <Switch>
-          <Route path="/" component={Landing} exact />
-          <Route path="/about" component={About} exact />
-          <Route path="/contact" component={Contact} exact />
-          <Route path="/blog" component={Blog} exact />
-          <Route path="/portfolio/:id">
-            <PortfolioPage />
-          </Route>
-        </Switch>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Landing  />} exact />
+          <Route path="/about" element={<About />} exact />
+          <Route path="/contact" element={<Contact />} exact />
+          <Route path="/blog" element={<Blog />} exact />
+          <Route path="/wordhoax" element={<WordHoax /> } exact />
+        </Routes>
       </div>
-    </ApolloProvider>
   );
 }
 

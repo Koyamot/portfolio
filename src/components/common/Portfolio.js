@@ -1,56 +1,29 @@
-import React from "react";
-import { useQuery, gql } from "@apollo/client";
+import React, { forwardRef, useState } from "react";
+import Tabs from "./Tabs";
+import useCaseList from "../common/useCaseList";
+
 import { Link } from "react-router-dom";
 
-const GET_DATA = gql`
-  query getData {
-    portfolios {
-      id
-      Title
-      Image {
-        id
-        url
-      }
-      uxContent
-    }
-  }
-`;
+const Portfolio = forwardRef((props, ref) => {
+  const [isActive, setsActive] = useState(false);
+  const useCases = useCaseList.useCases
 
-const Portfolio = () => {
-  const { loading, error, data } = useQuery(GET_DATA, {});
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>DOH! :(</p>;
-
-  const portfolios = data.portfolios;
+  const onTabClick = () => {
+    setIsActive(active);
+  };
 
   return (
-    <div className="portfolio_container">
-      <h1 className="portfolio_h1">
-        View my gallery of visual human experiences
-      </h1>
-      <div className="hold_portfolio">
-        {portfolios.map((x, i) => (
-          <Link to={`/portfolio/${x.id}`} key={i}>
-          <Pieces p={x} key={i}/>
-          </Link>
-        ))}
+    <div ref={ref} className="landing text-center pt-10">
+      <div className="min-h-screen bg-base-100">
+        <div className="flex flex-col justify-center">
+          <h1 className="text-4xl font-bold px-3 mb-6">
+            Welcome to my Gallery of Visual Human Experiences
+          </h1>
+          <Tabs useCases={useCases} />
+        </div>
       </div>
     </div>
   );
-};
-
-const Pieces = ({ p }) => {
-  console.log(p);
-  return (
-    <div className="portfolio_pieces">
-      <div key={p.id}>
-        <img src={p.Image[0].url} alt="Word Hoax!" />
-        <h4>{p.Title}</h4>
-        <p>{p.uxContent}</p>
-      </div>
-    </div>
-  );
-};
+});
 
 export default Portfolio;
